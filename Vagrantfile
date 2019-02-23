@@ -9,7 +9,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", privileged: false, inline: $INSTALL_DOCKER
   config.vm.provider :virtualbox do |v|
     v.name = "dockerdev"
-    v.memory = 1024
+    v.memory = 512
   end
 
 end
@@ -24,4 +24,5 @@ sudo apt-get update -qq
 sudo apt-get install -y docker-ce
 sudo usermod -aG docker ${USER}
 
+echo 'alias dcls='"'"'docker container ls --format "''{{.Names}}\t{{.ID}}\t{{.Image}}\t{{.Ports}}''"'"'"
 SCRIPT
