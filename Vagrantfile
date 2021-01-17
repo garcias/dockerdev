@@ -8,7 +8,7 @@ Vagrant.configure(2) do |config|
   config.ssh.forward_agent = true
   config.vm.provider :virtualbox do |v|
     v.name = "dockerdev"
-    v.memory = 1024
+    v.memory = 512
   end
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     sudo apt-get update -qq
